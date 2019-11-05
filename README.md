@@ -3,12 +3,12 @@ BFD role
 
 This role facilitates the configuration of BFD global attributes, and is abstracted for dellos10. It specifically enables configuration of bfd interval,min_rx,multiplier and role.
 
-The dellos-bfd role requires an SSH connection for connectivity to a Dell EMC Networking device. You can use any of the built-in OS connection variables .
+The dellos_bfd role requires an SSH connection for connectivity to a Dell EMC Networking device. You can use any of the built-in OS connection variables .
 
 Installation
 ------------
 
-    ansible-galaxy install Dell-Networking.dellos-bfd
+    ansible-galaxy install Dell-Networking.dellos_bfd
 
 Role variables
 --------------
@@ -53,14 +53,14 @@ Ansible Dell EMC Networking roles require connection information to establish co
 Dependencies
 ------------
 
-The *dellos-bfd* role is built on modules included in the core Ansible code. These modules were added in Ansible version 2.2.0.
+The *dellos_bfd* role is built on modules included in the core Ansible code. These modules were added in Ansible version 2.2.0.
 
 Example playbook
 ----------------
 
-This example uses the *dellos-bfd role* to completely set the global BFD attributes. It creates a *hosts* file with the switch details and corresponding variables. The hosts file should define the *ansible_network_os* variable with corresponding Dell EMC networking OS name. 
+This example uses the *dellos_bfd role* to completely set the global BFD attributes. It creates a *hosts* file with the switch details and corresponding variables. The hosts file should define the *ansible_network_os* variable with corresponding Dell EMC networking OS name. 
 
-When *dellos_cfg_generate* is set to true, the variable generates the configuration commands as a .part file in *build_dir* path. By default, the variable is set to false. The bfd role writes a simple playbook that only references the *dellos-bfd* role. By including the role, you automatically get access to all of the tasks to configure bfd feature. 
+When *dellos_cfg_generate* is set to true, the variable generates the configuration commands as a .part file in *build_dir* path. By default, the variable is set to false. The bfd role writes a simple playbook that only references the *dellos_bfd* role. By including the role, you automatically get access to all of the tasks to configure bfd feature. 
 
 **Sample hosts file**
  
@@ -89,7 +89,7 @@ When *dellos_cfg_generate* is set to true, the variable generates the configurat
 
     - hosts: leaf1
       roles:
-         - Dell-Networking.dellos-bfd
+         - Dell-Networking.dellos_bfd
 
 **Run**
 
